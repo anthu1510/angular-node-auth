@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-light">
+  <div id="navbarNavDropdown" class="navbar-collapse collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!this.authService.loggedIn()" routerLink="/register" routerLinkActive="active" >Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!this.authService.loggedIn()" routerLink="/" routerLinkActive="active">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer" *ngIf="this.authService.loggedIn()" (click)="this.authService.logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
